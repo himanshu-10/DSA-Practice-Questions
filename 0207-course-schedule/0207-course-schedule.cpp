@@ -13,10 +13,17 @@ public:
         // topo sort logic ---> BFS
         
         // indegree
-       vector<int> indegree(numCourses, 0);
-        for(auto& entry : adj) {
-            for(auto neighbor : entry.second) {
-                indegree[neighbor]++;
+        // vector<int> indegree(numCourses, 0);
+        // for(auto& it : adj) {
+        //     for(auto neighbor : it.second) {
+        //         indegree[neighbor]++;
+        //     }
+        // }
+        
+         vector<int>indegree(numCourses,0);
+        for(int i = 0; i< numCourses;i++ ){
+            for(auto it : adj[i]){
+                indegree[it]++;
             }
         }
         
